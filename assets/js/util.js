@@ -1,7 +1,7 @@
 (function ($) {
 
 	$(document).ready(function () {
-		$("#sendButton").click(function () {
+		$("#sendButton").click(function (e) {
 			var name = $("#name").val();
 			var email = $("#email").val();
 			var message = $("#message").val();
@@ -15,7 +15,14 @@
 			});
 
 			alert('Thank you');
+			evt.preventDefault();  
+			return false;
 		});
+	});
+
+	$("#forma").submit(function(event) {
+		event.preventDefault();
+		// ...
 	});
 	/**
 	 * Generate an indented list of links from a nav. Meant for use with panel().
